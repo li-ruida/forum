@@ -1,0 +1,9 @@
+# 论坛项目
+## 技术栈
++ SpringBoot2
++ Mybatis
++ Thymeleaf
++ Vue3
++ MySQL
++ Redis
++ JWT
