@@ -1,12 +1,13 @@
 # 论坛项目
 ## 技术栈
-+ SpringBoot2
++ Spring Boot
 + Mybatis-Plus
 + Thymeleaf
-+ Vue3
++ Vue
 + MySQL
 + Redis
-+ ElasticSearch
++ ElasticSearch 
++ Spring Data
 ## 后续会加的
 + JWT
 + RabbitMQ
