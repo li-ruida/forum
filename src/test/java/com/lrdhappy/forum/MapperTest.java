@@ -45,4 +45,8 @@ public class MapperTest {
     void commentTest(){
         System.out.println(commentService.getById(1));
     }
+    @Test
+    void userSelectByAccount(){
+        System.out.println(userService.selectAccount("1002"));
+    }
 }

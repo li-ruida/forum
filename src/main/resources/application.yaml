@@ -29,3 +29,7 @@ spring:
           enabled: true
           config:
             drop-table-allow: false
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true   #开启页面表单的Rest功能

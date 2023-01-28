@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.lrdhappy.forum.bean.User;
 import com.lrdhappy.forum.mapper.UserMapper;
 import com.lrdhappy.forum.service.impl.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,5 +13,10 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
-
+    @Autowired
+    UserMapper userMapper;//这个报错不用管,可以运行...
+    @Override
+    public User selectAccount(String account){
+        return  userMapper.selectAccount(account);
+    }
 }
