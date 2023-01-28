@@ -8,7 +8,7 @@
 + Redis
 + ElasticSearch 
 + Spring Data
-## 后续会加的
-+ JWT
-+ RabbitMQ
-+ Spring Security
+> 后续会加的
+> + JWT
+> + RabbitMQ
+> + Spring Security

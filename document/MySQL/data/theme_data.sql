@@ -1,0 +1,10 @@
+insert into `theme_table` (`id`, `name`, `moderator`, `visible`) values (1, 'Solidity', 1, 1);
+insert into `theme_table` (`id`, `name`, `moderator`, `visible`) values (2, 'C#', 1, 1);
+insert into `theme_table` (`id`, `name`, `moderator`, `visible`) values (3, 'PL/I', 1, 1);
+insert into `theme_table` (`id`, `name`, `moderator`, `visible`) values (4, 'Scheme', 1, 1);
+insert into `theme_table` (`id`, `name`, `moderator`, `visible`) values (5, 'cg', 1, 1);
+insert into `theme_table` (`id`, `name`, `moderator`, `visible`) values (6, 'Fortran', 1, 1);
+insert into `theme_table` (`id`, `name`, `moderator`, `visible`) values (7, 'J#', 1, 1);
+insert into `theme_table` (`id`, `name`, `moderator`, `visible`) values (8, 'Bash', 1, 1);
+insert into `theme_table` (`id`, `name`, `moderator`, `visible`) values (9, 'MQL5', 1, 1);
+insert into `theme_table` (`id`, `name`, `moderator`, `visible`) values (10, 'Assembly', 1, 1);
