@@ -12,3 +12,5 @@
 > + JWT
 > + RabbitMQ
 > + Spring Security
+## 关于
++ 前端使用adminex作为基础模板
