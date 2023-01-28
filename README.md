@@ -1,10 +1,10 @@
 # 论坛项目
 ## TODO && Change
-+ Markdown支持
 + Redis缓存
 + Elasticsearch搜索
 + 文件上传下载
-+ 注册界面改成ajax
++ ajax
++ Markdown支持
 + ...
 ## 技术栈
 + Spring Boot

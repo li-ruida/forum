@@ -44,6 +44,12 @@ public class IndexController {
         }
         return "login";
     }
+    @RequestMapping("logout")
+    public String logout(HttpSession session, Model model){
+        session.setAttribute("loginUser",null);
+        model.addAttribute("msg","已退出登录");
+        return "login";
+    }
     @PostMapping("/forget")
     public String forgetPasswordPost(){
         return "redirect:/forgetpassword";
