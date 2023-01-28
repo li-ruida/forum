@@ -1,0 +1,10 @@
+insert into `post_table` (`id`, `name`, `writter`, `visible`, `content`, `theme`, `time`) values (1, '漠河舞厅', 2, 1, '东北技术大学', 1, '2022-07-15 18:47:20');
+insert into `post_table` (`id`, `name`, `writter`, `visible`, `content`, `theme`, `time`) values (2, '稻香', 2, 1, '中国大学', 1, '2022-01-05 16:05:19');
+insert into `post_table` (`id`, `name`, `writter`, `visible`, `content`, `theme`, `time`) values (3, '童话', 2, 1, '西技术大学', 1, '2022-03-28 05:00:33');
+insert into `post_table` (`id`, `name`, `writter`, `visible`, `content`, `theme`, `time`) values (4, '童话', 2, 1, '西南体育大学', 1, '2022-05-23 23:11:55');
+insert into `post_table` (`id`, `name`, `writter`, `visible`, `content`, `theme`, `time`) values (5, '反方向的钟', 2, 1, '东南技术大学', 1, '2022-07-22 12:34:23');
+insert into `post_table` (`id`, `name`, `writter`, `visible`, `content`, `theme`, `time`) values (6, '烟花易冷', 2, 1, '西北经贸大学', 1, '2022-05-06 23:46:17');
+insert into `post_table` (`id`, `name`, `writter`, `visible`, `content`, `theme`, `time`) values (7, '一荤一素', 2, 1, '西南理工大学', 1, '2022-01-10 14:15:13');
+insert into `post_table` (`id`, `name`, `writter`, `visible`, `content`, `theme`, `time`) values (8, '火红的萨日朗', 2, 1, '东北农业大学', 1, '2022-11-25 06:44:22');
+insert into `post_table` (`id`, `name`, `writter`, `visible`, `content`, `theme`, `time`) values (9, '本草纲目', 2, 1, '东南农业大学', 1, '2022-08-10 04:11:16');
+insert into `post_table` (`id`, `name`, `writter`, `visible`, `content`, `theme`, `time`) values (10, '像我这样的人', 2, 1, '东南理工大学', 1, '2022-11-03 10:57:54');
