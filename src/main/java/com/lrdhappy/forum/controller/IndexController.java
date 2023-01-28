@@ -52,4 +52,31 @@ public class IndexController {
     public String forgetPasswordGet(){
         return "msg/forgetpassword";
     }
+    @GetMapping("/register")
+    public String getRegister(){
+        return "register";
+    }
+    @PostMapping("/register")
+    public String postRegister(@RequestParam("account") String account,
+                               @RequestParam("name") String name,
+                               @RequestParam("password") String password,
+                               @RequestParam("password1") String password1,
+                               HttpSession session, Model model){
+        if(password.equals(password1)){
+            User user=userService.selectAccount(account);
+            if(user==null){
+                user=new User(account,name,password);
+                boolean save = userService.save(user);
+                model.addAttribute("msg",save?"注册成功":"注册失败");
+            }
+            else {
+                model.addAttribute("msg","账户已存在");
+            }
+        }
+        else{
+            model.addAttribute("msg","密码不一致,请重新输入");
+        }
+
+        return "register";
+    }
 }

@@ -19,4 +19,10 @@ public class User {
     int power;
     String account;
     String password;
+    public User(String account,String name,String password){
+        this.account=account;
+        this.power=0;
+        this.name=name;
+        this.password=password;
+    }
 }
