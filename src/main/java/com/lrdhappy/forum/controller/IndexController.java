@@ -66,7 +66,7 @@ public class IndexController {
     public String postRegister(@RequestParam("account") String account,
                                @RequestParam("name") String name,
                                @RequestParam("password") String password,
-                               @RequestParam("password1") String password1,
+                               @RequestParam("confirm_password") String password1,
                                HttpSession session, Model model){
         if(password.equals(password1)){
             User user=userService.selectAccount(account);

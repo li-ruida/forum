@@ -28,7 +28,7 @@
 
 <div class="container">
 
-    <form class="form-signin" th:action="@{/register}" method="post">
+    <form class="form-signin" th:action="@{/register}" method="post" id="signupForm">
         <div class="form-signin-heading text-center">
             <h1 class="sign-title">Registration</h1>
             <img src="images/login-logo.png" alt=""/>
@@ -40,8 +40,10 @@
             <p> Enter your account details below</p>
             <input type="text" autofocus="" placeholder="Name(1-8 characters)" name="name" class="form-control" required pattern=".{1,8}">
             <input type="text" autofocus="" placeholder="Account(4-16 characters)" name="account" class="form-control" required pattern=".{4,16}">
-            <input type="password" placeholder="Password(6-16 characters)" class="form-control"  name="password" required pattern=".{6,16}">
-            <input type="password" placeholder="Re-type Password(6-16 characters)" class="form-control" name="password1" required pattern=".{6,16}">
+            <input type="password" placeholder="Password(6-16 characters)" class="form-control"  name="password" required pattern=".{6,16}"  id="password">
+            <input type="password" placeholder="Re-type Password(6-16 characters)" class="form-control" name="confirm_password"  required pattern=".{6,16}" id="confirm_password">
+
+
             <label class="checkbox">
                 <input type="checkbox" value="agree this condition" required> I agree to the Terms of Service and
                 Privacy Policy
@@ -66,10 +68,23 @@
 
 <!-- Placed js at the end of the document so the pages load faster -->
 
-
 <!-- Placed js at the end of the document so the pages load faster -->
 <script src="js/jquery-1.10.2.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/modernizr.min.js"></script>
+
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script src="js/validation-init.js"></script>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="js/jquery-migrate-1.2.1.min.js"></script>
+
+<script src="js/jquery.nicescroll.js"></script>
+
+
+
+<!--common scripts for all pages-->
+<script src="js/scripts.js"></script>
 </body>
 </html>
