@@ -483,38 +483,33 @@
                 <!--Post table start-->
                 <div class="panel">
                     <div class="panel-body">
-                <table>
-                    <tr th:if="${#lists.isEmpty(postpage.getSize())}">
-                        <td colspan="5">没有对应帖子!</td>
-                    </tr>
-                    <tr th:unless="${#lists.isEmpty(postpage.getSize())}"  th:each="post: ${postpage.getRecords()}" >
-                        <td class="w20" >
-                            <h1 class="">
-                                <a th:href="@{'/post/'+${post.getWritter()}}" th:text="${post.getName()}">Neque porro quisquam est qui dolo rem ipsum quio</a>
-                            </h1>
-                            <p class=" auth-row" th:text="${post.getTime()}">
+                        <table>
+                            <tr th:if="${#lists.isEmpty(postpage.getSize())}">
+                                <td colspan="5">没有对应帖子!</td>
+                            </tr>
+                            <tr th:unless="${#lists.isEmpty(postpage.getSize())}"  th:each="post: ${postpage.getRecords()}" >
+                                <td class="w20" >
+                                    <h1 class="">
+                                        <a th:href="@{'/post/'+${post.getWritter()}}" th:text="${post.getName()}">Neque porro quisquam est qui dolo rem ipsum quio</a>
+                                    </h1>
+                                    <p class=" auth-row" th:text="${post.getTime()}">
 
 
-                            </p>
+                                    </p>
 
-                            <p th:text="${post.getContent()}">Donec ultrices faucibus rutrum. Phasellus sodales vulputate urna, vel accumsan augue
-                                egestas ac. Donec vitae leo at sem lobortis porttitor eu consequat risus. Mauris sed
-                                congue orci.
-                            </p>
-                            <a th:href="@{'/post/'+${post.getWritter()}}" class="more">Continue Reading</a>
-                        </td >
-                    </tr>
-                </table>
+                                    <p th:text="${post.getContent()}">Donec ultrices faucibus rutrum. Phasellus sodales vulputate urna, vel accumsan augue
+                                        egestas ac. Donec vitae leo at sem lobortis porttitor eu consequat risus. Mauris sed
+                                        congue orci.
+                                    </p>
+                                    <a th:href="@{'/post/'+${post.getWritter()}}" class="more">Continue Reading</a>
+                                </td >
+                            </tr>
+                        </table>
                         <div class="col-md-8">
                             <div class="text-center">
                                 <ul class="pagination blog-pagination">
-                                    <li><a href="#">PREV</a></li>
-                                    <li><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                    <li><a href="#">NEXT</a></li>
+                                    <li><a th:href="@{/page(pagenum=(${postpage.hasPrevious()}?${postpage.getCurrent()-1}:${postpage.getCurrent()}))}">PREV</a></li>
+                                    <li><a th:href="@{/page(pagenum=(${postpage.hasNext()}?${postpage.getCurrent()+1}:${postpage.getCurrent()}))}">NEXT</a></li>
                                 </ul>
 
                             </div>
