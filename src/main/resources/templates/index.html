@@ -23,18 +23,18 @@
 </head>
 
 <body class="sticky-header">
-
 <section>
+
     <!-- left side start-->
     <div class="left-side sticky-left-side">
 
         <!--logo and iconic logo start-->
         <div class="logo">
-            <a th:href="@{/}"><img src="images/logo.png" alt=""></a>
+            <a href="index.html"><img src="images/logo.png" alt=""></a>
         </div>
 
         <div class="logo-icon text-center">
-            <a th:href="@{/}"><img src="images/logo_icon.png" alt=""></a>
+            <a href="index.html"><img src="images/logo_icon.png" alt=""></a>
         </div>
         <!--logo and iconic logo end-->
 
@@ -46,16 +46,16 @@
                 <div class="media logged-user">
                     <img alt="" src="images/photos/user-avatar.png" class="media-object">
                     <div class="media-body">
-                        <h4><a href="#" th:text="${session.loginUser.name}">John Doe</a></h4>
+                        <h4><a href="#">John Doe</a></h4>
                         <span>"Hello There..."</span>
                     </div>
                 </div>
 
                 <h5 class="left-nav-title">Account Information</h5>
                 <ul class="nav nav-pills nav-stacked custom-nav">
-                    <li><a th:href="@{/profile}"><i class="fa fa-user"></i> <span>Profile</span></a></li>
+                    <li><a href="#"><i class="fa fa-user"></i> <span>Profile</span></a></li>
                     <li><a href="#"><i class="fa fa-cog"></i> <span>Settings</span></a></li>
-                    <li><a th:href="@{/logout}"><i class="fa fa-sign-out"></i> <span>Sign Out</span></a></li>
+                    <li><a href="#"><i class="fa fa-sign-out"></i> <span>Sign Out</span></a></li>
                 </ul>
             </div>
 
@@ -71,14 +71,15 @@
 
                     </ul>
                 </li>
-                <li class="menu-list nav-active"><a href=""><i class="fa fa-book"></i> <span>UI Elements</span></a>
+                <li class="menu-list"><a href=""><i class="fa fa-book"></i> <span>UI Elements</span></a>
                     <ul class="sub-menu-list">
-                        <li class="active"><a href="tmp/general.html"> General</a></li>
+                        <li><a href="general.html"> General</a></li>
                         <li><a href="buttons.html"> Buttons</a></li>
                         <li><a href="tabs-accordions.html"> Tabs & Accordions</a></li>
                         <li><a href="typography.html"> Typography</a></li>
                         <li><a href="slider.html"> Slider</a></li>
                         <li><a href="panels.html"> Panels</a></li>
+
                     </ul>
                 </li>
                 <li class="menu-list"><a href=""><i class="fa fa-cogs"></i> <span>Components</span></a>
@@ -137,14 +138,14 @@
                         <li><a href="vector_map.html"> Vector Map</a></li>
                     </ul>
                 </li>
-                <li class="menu-list"><a href=""><i class="fa fa-file-text"></i> <span>Extra Pages</span></a>
+                <li class="menu-list nav-active"><a href=""><i class="fa fa-file-text"></i> <span>Extra Pages</span></a>
                     <ul class="sub-menu-list">
                         <li><a href="profile.html"> Profile</a></li>
                         <li><a href="invoice.html"> Invoice</a></li>
                         <li><a href="pricing_table.html"> Pricing Table</a></li>
                         <li><a href="timeline.html"> Timeline</a></li>
-                        <li><a href="blog_list.html"> Blog List</a></li>
-                        <li><a href="blog_details.html"> Blog Details</a></li>
+                        <li class="active"><a href="postlist.html"> Blog List</a></li>
+                        <li><a href="postdetail.html"> Blog Details</a></li>
                         <li><a href="directory.html"> Directory </a></li>
                         <li><a href="chat.html"> Chat </a></li>
                         <li><a href="404.html"> 404 Error</a></li>
@@ -163,8 +164,56 @@
     <!-- left side end-->
 
     <!-- main content start-->
-    <div class="main-content">
+    <div class="main-content" >
+        <!--body wrapper start-->
+        <div class="wrapper">
 
+            <div class="row">
+
+                <div class="col-md-12">
+                    <!--breadcrumbs start -->
+
+                    <ul class="breadcrumb panel">
+                        <li><a th:href="@{/}"><i class="fa fa-home"></i> Home</a></li>
+                        <li class="active" style="text-align: center">欢迎发帖回帖</li>
+                        <button type="button" class="close close-sm" data-dismiss="alert">
+                            <i class="fa fa-times"></i>
+                        </button>
+                    </ul>
+                    <!--breadcrumbs end -->
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <!--notification start-->
+                    <section class="panel">
+                        <header class="panel-heading">
+                            Alerts
+                            <span class="tools pull-right">
+                                <a class="fa fa-chevron-down" href="javascript:;"></a>
+                            </span>
+                        </header>
+                        <div class="panel-body">
+                            <div class="alert alert-info fade in">
+                                <button type="button" class="close close-sm" data-dismiss="alert">
+                                    <i class="fa fa-times"></i>
+                                </button>
+                                <strong>Heads up!</strong> This alert needs your attention, but it's not super
+                                important.
+                            </div>
+
+
+
+                        </div>
+                    </section>
+                    <!--notification end-->
+                </div>
+            </div>
+
+
+        </div>
+        <!--body wrapper end-->
         <!-- header section start-->
         <div class="header-section">
 
@@ -174,7 +223,7 @@
 
             <!--search start-->
             <form class="searchform" action="index.html" method="post">
-                <input type="text" class="form-control" name="keyword" placeholder="Search here..."/>
+                <input type="text" class="form-control" name="keyword" placeholder="Search here..." />
             </form>
             <!--search end-->
 
@@ -195,9 +244,7 @@
                                             <div>Database update</div>
                                         </div>
                                         <div class="progress progress-striped">
-                                            <div style="width: 40%" aria-valuemax="100" aria-valuemin="0"
-                                                 aria-valuenow="40" role="progressbar"
-                                                 class="progress-bar progress-bar-warning">
+                                            <div style="width: 40%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-warning">
                                                 <span class="">40%</span>
                                             </div>
                                         </div>
@@ -209,9 +256,7 @@
                                             <div>Dashboard done</div>
                                         </div>
                                         <div class="progress progress-striped">
-                                            <div style="width: 90%" aria-valuemax="100" aria-valuemin="0"
-                                                 aria-valuenow="90" role="progressbar"
-                                                 class="progress-bar progress-bar-success">
+                                            <div style="width: 90%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="90" role="progressbar" class="progress-bar progress-bar-success">
                                                 <span class="">90%</span>
                                             </div>
                                         </div>
@@ -223,9 +268,7 @@
                                             <div>Web Development</div>
                                         </div>
                                         <div class="progress progress-striped">
-                                            <div style="width: 66%" aria-valuemax="100" aria-valuemin="0"
-                                                 aria-valuenow="66" role="progressbar"
-                                                 class="progress-bar progress-bar-info">
+                                            <div style="width: 66%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="66" role="progressbar" class="progress-bar progress-bar-info">
                                                 <span class="">66% </span>
                                             </div>
                                         </div>
@@ -237,9 +280,7 @@
                                             <div>Mobile App</div>
                                         </div>
                                         <div class="progress progress-striped">
-                                            <div style="width: 33%" aria-valuemax="100" aria-valuemin="0"
-                                                 aria-valuenow="33" role="progressbar"
-                                                 class="progress-bar progress-bar-danger">
+                                            <div style="width: 33%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="33" role="progressbar" class="progress-bar progress-bar-danger">
                                                 <span class="">33% </span>
                                             </div>
                                         </div>
@@ -251,8 +292,7 @@
                                             <div>Issues fixed</div>
                                         </div>
                                         <div class="progress progress-striped">
-                                            <div style="width: 80%" aria-valuemax="100" aria-valuemin="0"
-                                                 aria-valuenow="80" role="progressbar" class="progress-bar">
+                                            <div style="width: 80%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="80" role="progressbar" class="progress-bar">
                                                 <span class="">80% </span>
                                             </div>
                                         </div>
@@ -272,17 +312,16 @@
                             <ul class="dropdown-list normal-list">
                                 <li class="new">
                                     <a href="">
-                                        <span class="thumb"><img src="images/photos/user1.png" alt=""/></span>
+                                        <span class="thumb"><img src="images/photos/user1.png" alt="" /></span>
                                         <span class="desc">
-                                          <span class="name" th:text="${session.loginUser.name}">John Doe <span
-                                                  class="badge badge-success">new</span></span>
+                                          <span class="name">John Doe <span class="badge badge-success">new</span></span>
                                           <span class="msg">Lorem ipsum dolor sit amet...</span>
                                         </span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="">
-                                        <span class="thumb"><img src="images/photos/user2.png" alt=""/></span>
+                                        <span class="thumb"><img src="images/photos/user2.png" alt="" /></span>
                                         <span class="desc">
                                           <span class="name">Jonathan Smith</span>
                                           <span class="msg">Lorem ipsum dolor sit amet...</span>
@@ -291,7 +330,7 @@
                                 </li>
                                 <li>
                                     <a href="">
-                                        <span class="thumb"><img src="images/photos/user3.png" alt=""/></span>
+                                        <span class="thumb"><img src="images/photos/user3.png" alt="" /></span>
                                         <span class="desc">
                                           <span class="name">Jane Doe</span>
                                           <span class="msg">Lorem ipsum dolor sit amet...</span>
@@ -300,7 +339,7 @@
                                 </li>
                                 <li>
                                     <a href="">
-                                        <span class="thumb"><img src="images/photos/user4.png" alt=""/></span>
+                                        <span class="thumb"><img src="images/photos/user4.png" alt="" /></span>
                                         <span class="desc">
                                           <span class="name">Mark Henry</span>
                                           <span class="msg">Lorem ipsum dolor sit amet...</span>
@@ -309,7 +348,7 @@
                                 </li>
                                 <li>
                                     <a href="">
-                                        <span class="thumb"><img src="images/photos/user5.png" alt=""/></span>
+                                        <span class="thumb"><img src="images/photos/user5.png" alt="" /></span>
                                         <span class="desc">
                                           <span class="name">Jim Doe</span>
                                           <span class="msg">Lorem ipsum dolor sit amet...</span>
@@ -362,14 +401,13 @@
                     </li>
                     <li>
                         <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                            <img src="images/photos/user-avatar.png" alt=""/>
-                            <span th:text="${session.loginUser.name}">John Doe</span>
-
+                            <img src="images/photos/user-avatar.png" alt="" />
+                            <span th:if="${session.loginUser}!=null" th:text="${session.loginUser.name}">Name</span>
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
-                            <li><a th:href="@{/profile}"><i class="fa fa-user"></i> Profile</a></li>
-                            <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                            <li><a th:href="@{/profile}"><i class="fa fa-user"></i>  Profile</a></li>
+                            <li><a href="#"><i class="fa fa-cog"></i>  Settings</a></li>
                             <li><a th:href="@{/logout}"><i class="fa fa-sign-out"></i> Log Out</a></li>
                         </ul>
                     </li>
@@ -381,58 +419,256 @@
         </div>
         <!-- header section end-->
 
-        <!-- page heading start-->
-        <!-- page heading end-->
 
         <!--body wrapper start-->
         <div class="wrapper">
-
-            <div class="row">
-
-                <div class="col-md-12">
-                    <!--breadcrumbs start -->
-
-                    <ul class="breadcrumb panel">
-                        <li><a th:href="@{/}"><i class="fa fa-home"></i> Home</a></li>
-                        <li class="active" style="text-align: center">欢迎发帖回帖</li>
-                        <button type="button" class="close close-sm" data-dismiss="alert">
-                            <i class="fa fa-times"></i>
-                        </button>
-                    </ul>
-                    <!--breadcrumbs end -->
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <!--notification start-->
-                    <section class="panel">
-                        <header class="panel-heading">
-                            Alerts
-                            <span class="tools pull-right">
-                                <a class="fa fa-chevron-down" href="javascript:;"></a>
-                            </span>
-                        </header>
+            <div class="row blog">
+                <div class="col-md-4">
+                    <div class="panel">
                         <div class="panel-body">
-                            <div class="alert alert-info fade in">
-                                <button type="button" class="close close-sm" data-dismiss="alert">
-                                    <i class="fa fa-times"></i>
-                                </button>
-                                <strong>Heads up!</strong> This alert needs your attention, but it's not super
-                                important.
+                            <input type="text" placeholder="Search Blog" class="form-control blog-search">
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body">
+                            <div class="blog-post">
+                                <h3>Latest Blog Post</h3>
+                                <div class="media">
+                                    <a href="javascript:;" class="pull-left">
+                                        <img alt="" src="images/blog/blog-thumb-1.jpg" class=" ">
+                                    </a>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"><a href="javascript:;">02 May 2013 </a></h5>
+                                        <p>
+                                            Donec id elit non mi porta gravida at eget metus amet int
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <a href="javascript:;" class="pull-left">
+                                        <img alt="" src="images/blog/blog-thumb-2.jpg" class=" ">
+                                    </a>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"><a href="javascript:;">02 May 2013 </a></h5>
+                                        <p>
+                                            Donec id elit non mi porta gravida at eget metus amet int
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <a href="javascript:;" class="pull-left">
+                                        <img alt="" src="images/blog/blog-thumb-3.jpg" class=" ">
+                                    </a>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"><a href="javascript:;">02 May 2013 </a></h5>
+                                        <p>
+                                            Donec id elit non mi porta gravida at eget metus amet int
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body">
+                            <div class="blog-post">
+                                <h3>recent comments</h3>
+                                <ul>
+                                    <li><a href="javascript:;"><i class="  fa fa-comments-o"></i> admin on Vestiblulum quis dolor </a></li>
+                                    <li><a href="javascript:;"><i class="  fa fa-comments-o"></i> admin on Nam sed arcu tellus</a></li>
+                                    <li><a href="javascript:;"><i class="  fa fa-comments-o"></i> monster002 on Fringilla ut vel ipsum </a></li>
+                                    <li><a href="javascript:;"><i class="  fa fa-comments-o"></i> admin on Vestiblulum quis dolor sit</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body">
+                            <div class="blog-post">
+                                <h3>category</h3>
+                                <ul>
+                                    <li><a href="javascript:;"><i class="  fa fa-angle-right"></i> Animals</a></li>
+                                    <li><a href="javascript:;"><i class="  fa fa-angle-right"></i> Landscape</a></li>
+                                    <li><a href="javascript:;"><i class="  fa fa-angle-right"></i> Portait</a></li>
+                                    <li><a href="javascript:;"><i class="  fa fa-angle-right"></i> Wild Life</a></li>
+                                    <li><a href="javascript:;"><i class="  fa fa-angle-right"></i> Video</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body">
+                            <div class="blog-post">
+                                <h3>blog archive</h3>
+                                <ul>
+                                    <li><a href="javascript:;"><i class="  fa fa-angle-right"></i> May 2013</a></li>
+                                    <li><a href="javascript:;"><i class="  fa fa-angle-right"></i> April 2013</a></li>
+                                    <li><a href="javascript:;"><i class="  fa fa-angle-right"></i> March 2013</a></li>
+                                    <li><a href="javascript:;"><i class="  fa fa-angle-right"></i> February 2013</a></li>
+                                    <li><a href="javascript:;"><i class="  fa fa-angle-right"></i> January 2013</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <div class="panel">
+                        <div class="panel-body">
+                            <h1 class="text-center mtop35"><a href="#">Neque porro quisquam est qui dolo rem ipsum quio</a></h1>
+                            <p class="text-center auth-row">
+                                By <a href="#">Anthony Jones</a>   |   27 December 2020   | <a href="#">5 Comments</a>
+                            </p>
+                            <div class="blog-img-wide">
+                                <img src="images/blog/blog-wide-img.jpg" alt="">
+                            </div>
+                            <p>Donec ultrices faucibus rutrum. Phasellus sodales vulputate urna, vel accumsan augue egestas ac. Donec vitae leo at sem lobortis porttitor eu consequat risus. Mauris sed congue orci.
+                            </p>
+                            <a href="#" class="more">Continue Reading</a>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body">
+                            <div class="blog-img-wide">
+                                <img src="images/blog/blog-wide-img.jpg" alt="">
+                            </div>
+                            <h1 class=""><a href="#">Neque porro quisquam est qui dolo rem ipsum quio</a></h1>
+                            <p class=" auth-row">
+                                By <a href="#">Anthony Jones</a>   |   27 December 2020   | <a href="#">5 Comments</a>
+                            </p>
+
+                            <p>Donec ultrices faucibus rutrum. Phasellus sodales vulputate urna, vel accumsan augue egestas ac. Donec vitae leo at sem lobortis porttitor eu consequat risus. Mauris sed congue orci.
+                            </p>
+                            <a href="#" class="more">Continue Reading</a>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="blog-img-sm">
+                                        <img src="images/blog/blog-sm-img.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <h1 class=""><a href="#">Neque porro quisquam est qui dolo</a></h1>
+                                    <p class=" auth-row">
+                                        By <a href="#">Anthony Jones</a>   |   27 December 2020   | <a href="#">5 Comments</a>
+                                    </p>
+
+                                    <p>Donec ultrices faucibus rutrum. Phasellus sodales vulputate urna, vel accumsan augue egestas ac. Donec vitae leo at sem lobortis porttitor eu consequat risus. Mauris sed congue orci.
+                                    </p>
+                                    <a href="#" class="more">Continue Reading</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body text-center">
+                            <h1 class="mtop35"><a href="#">Neque porro quisquam est qui dolo rem ipsum quio</a></h1>
+                            <p class=" auth-row">
+                                By <a href="#">Anthony Jones</a>   |   27 December 2020   | <a href="#">5 Comments</a>
+                            </p>
+                            <p class="">Donec ultrices faucibus rutrum. Phasellus sodales vulputate urna, vel accumsan augue egestas ac. Donec vitae leo at sem lobortis porttitor eu consequat risus. Mauris sed congue orci.
+                            </p>
+                            <a href="#" class="more mbot20">Continue Reading</a>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body text-center">
+                            <i class="fa fa-quote-left"></i>
+                            <h1 class="">Proin sit amet sapien euismod, pretium ligula quis, tempus dui. Nam varius arcu id elit tristique consequat.</h1>
+                            <p class=" auth-row">
+                                <em> Anthony Jones</em>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body">
+                            <h1 class="mtop35"><a href="#">Neque porro quisquam est qui dolo rem ipsum quio</a></h1>
+                            <p class=" auth-row">
+                                By <a href="#">Anthony Jones</a>   |   27 December 2020   | <a href="#">5 Comments</a>
+                            </p>
+                            <p class="">Donec ultrices faucibus rutrum. Phasellus sodales vulputate urna, vel accumsan augue egestas ac. Donec vitae leo at sem lobortis porttitor eu consequat risus. Mauris sed congue orci.
+                            </p>
+                            <a href="#" class="more mbot20">Continue Reading</a>
+                        </div>
+                    </div>
+
+                    <div class="panel">
+                        <div class="panel-body">
+                            <div id="c-slide" class="carousel slide auto">
+                                <ol class="carousel-indicators out">
+                                    <li class="active" data-slide-to="0" data-target="#c-slide"></li>
+                                    <li class="" data-slide-to="1" data-target="#c-slide"></li>
+                                    <li class="" data-slide-to="2" data-target="#c-slide"></li>
+                                </ol>
+                                <div class="carousel-inner blog-img-wide">
+                                    <div class="item text-center active">
+                                        <img src="images/blog/image2.jpg" alt="">
+                                    </div>
+                                    <div class="item text-center">
+                                        <img src="images/blog/image3.jpg" alt="">
+                                    </div>
+                                    <div class="item text-center">
+                                        <img src="images/blog/blog-wide-img.jpg" alt="">
+                                    </div>
+                                </div>
                             </div>
 
-
+                            <h1 class=""><a href="#">Neque porro quisquam est qui dolo rem ipsum quio</a></h1>
+                            <p class=" auth-row">
+                                By <a href="#">Anthony Jones</a>   |   27 December 2020   | <a href="#">5 Comments</a>
+                            </p>
 
                         </div>
-                    </section>
-                    <!--notification end-->
+                    </div>
+
+                    <div class="panel">
+                        <div class="panel-body">
+                            <p class="">
+                                <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/53814789&amp;color=ff5500&amp;auto_play=false&amp;show_artwork=true"></iframe>
+                            </p>
+                            <h1 class=""><a href="#">Neque porro quisquam est qui dolo rem ipsum quio</a></h1>
+                            <p class=" auth-row">
+                                By <a href="#">Anthony Jones</a>   |   27 December 2020   | <a href="#">5 Comments</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body">
+                            <p class="">
+                                <iframe width="560" height="315" src="//www.youtube.com/embed/lq_BVyou38s" frameborder="0" allowfullscreen></iframe>
+                            </p>
+                            <h1 class=""><a href="#">Neque porro quisquam est qui dolo rem ipsum quio</a></h1>
+                            <p class=" auth-row">
+                                By <a href="#">Anthony Jones</a>   |   27 December 2020   | <a href="#">5 Comments</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <ul class="pagination blog-pagination">
+                            <li><a href="#">PREV</a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">NEXT</a></li>
+                        </ul>
+
+                    </div>
                 </div>
+
             </div>
-
-
         </div>
         <!--body wrapper end-->
+
+        <!--footer section start-->
+        <footer class="">
+            2020 &copy; AdminEx by ThemeBucket </a>
+        </footer>
+        <!--footer section end-->
 
 
     </div>
