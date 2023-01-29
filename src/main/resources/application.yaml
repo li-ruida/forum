@@ -33,3 +33,6 @@ spring:
     hiddenmethod:
       filter:
         enabled: true   #开启页面表单的Rest功能
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

@@ -1,10 +1,12 @@
 package com.lrdhappy.forum.service.impl.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.lrdhappy.forum.bean.Post;
 import com.lrdhappy.forum.mapper.PostMapper;
 import com.lrdhappy.forum.service.impl.PostService;
-import com.lrdhappy.forum.service.impl.ThemeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -13,4 +15,15 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements PostService {
+    @Autowired
+    PostMapper postMapper;
+    @Override
+    public Page<Post> postSelectByVisible(int pageNum, int pageLen) {
+        Page<Post> page=new Page<>(pageNum,pageLen);
+        LambdaQueryWrapper<Post> lambdaQueryWrapper=new LambdaQueryWrapper<>();
+        lambdaQueryWrapper.eq(Post::getVisible,1);
+        lambdaQueryWrapper.orderByDesc(Post::getTime);
+        Page<Post> postPage = postMapper.selectPage(page, lambdaQueryWrapper);
+        return postPage;
+    }
 }

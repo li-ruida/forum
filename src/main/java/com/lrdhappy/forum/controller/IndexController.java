@@ -22,10 +22,7 @@ import javax.servlet.http.HttpSession;
 public class IndexController {
     @Autowired
     UserService userService;
-    @RequestMapping("/")
-    public String index(){
-        return "index";
-    }
+
     @GetMapping("/login")
     public String loginGetPage(){
         return "login";
