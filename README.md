@@ -1,4 +1,5 @@
 # 论坛项目
+>并不是一个完善的项目,只是实现功能的demo
 ## TODO && Change
 + Redis缓存
 + Elasticsearch搜索
