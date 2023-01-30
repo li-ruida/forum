@@ -26,4 +26,11 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
         Page<Post> postPage = postMapper.selectPage(page, lambdaQueryWrapper);
         return postPage;
     }
+
+    @Override
+    public Post postSelectByIdAndVisible(int id, int power) {
+        Post post = postMapper.selectById(id);
+        int visible=post.getVisible()==1?1:(power==-2?1:0);
+        return visible==1?post:null;
+    }
 }

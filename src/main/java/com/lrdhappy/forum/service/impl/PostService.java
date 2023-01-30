@@ -10,4 +10,6 @@ import com.lrdhappy.forum.bean.Post;
  */
 public interface PostService extends IService<Post> {
     public Page<Post> postSelectByVisible(int pageNum, int pageLen);
+
+    public Post postSelectByIdAndVisible(int id,int visible);
 }

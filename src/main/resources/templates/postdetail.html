@@ -369,20 +369,6 @@
         <!-- header section end-->
 
         <!-- page heading start-->
-        <div class="page-heading">
-            <h3>
-                Blog Details <small>Subtext for header</small>
-            </h3>
-            <ul class="breadcrumb">
-                <li>
-                    <a href="#">Dashboard</a>
-                </li>
-                <li>
-                    <a href="#">Extra Pages</a>
-                </li>
-                <li class="active">Blog Details </li>
-            </ul>
-        </div>
         <!-- page heading end-->
 
         <!--body wrapper start-->
@@ -482,33 +468,23 @@
         <div class="single-blog">
         <div class="panel">
             <div class="panel-body">
-                <h1 class="text-center mtop35"><p  th:text="${postdetail.getName()}">Neque porro quisquam est qui dolo rem ipsum quio</p></h1>
+                <h1 class="text-center cmnt-head" th:text="${postdetail.getName()}">Neque porro quisquam est qui dolo rem ipsum quio</h1>
                 <p class="text-center auth-row">
                     <span  th:text="${writter.getName()}" class="panel-heading">Anthony Jones</span> &nbsp;
                     <span class=" panel-heading" th:text="${postdetail.getTime()}"> </span >
                         <span th:text="${theme.getName()}" class=" panel-heading">Anthony Jones</span>&nbsp;
                             <span class=" panel-heading">5 Comments</span>
                 </p>
-                <div class="blog-img-wide">
-                    <img src="images/blog/blog-wide-img.jpg" alt="">
-                </div>
-                <p>
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-                </p>
-                <p>
-                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+                <p th:text="${postdetail.getContent()}">
+
                 </p>
 
                 <blockquote>
                     <p>
-                        Vestibulum id ligula porta felis euismod semper. Sed posuere consectetur est at lobortis. Aenean eu leo quam. 				Pellentesque ornare sem lacinia quam venenatis vestibulum. Duis mollis, est non commodo luctus, nisi erat port			titor ligula, eget lacinia odio sem nec elit.
+                        这里是文章内容的展示界面
                     </p>
                 </blockquote>
 
-                <p>
-                    consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.
-
-                </p>
 
                 <div class="blog-tags">
                     TAGS <a href="#">photoshop</a> <a href="#">illustrator</a> <a href="#">adobe</a> <a href="#">theme</a>
