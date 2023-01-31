@@ -2,6 +2,7 @@ package com.lrdhappy.forum.bean;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.*;
+import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
@@ -15,6 +16,7 @@ import java.util.Date;
 @NoArgsConstructor
 @ToString
 @EqualsAndHashCode
+@Component
 @TableName("post_table")
 public class Post {
     int id;

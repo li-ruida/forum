@@ -16,6 +16,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,6 +39,11 @@ public class PostController {
 
     @Autowired
     User loginUser;
+
+    @Autowired
+    Post putpost;
+    @Autowired
+    User userforpost;
     @GetMapping("/")
     public String index(HttpSession session, Model model){
         Page<Post> postPage = postService.postSelectByVisible(1, 5);
@@ -70,6 +76,29 @@ public class PostController {
         model.addAttribute("postdetail",post);
         model.addAttribute("commentsmap",commentsmap);
         return "postdetail";
+    }
+    @PutMapping("/post")
+    public String putPost(@RequestParam("postname") String name,
+                          @RequestParam("postcontent") String content,
+                          HttpSession session,Model model
+                          ){
+        userforpost= (User) session.getAttribute("loginUser");
+        putpost.setTime(new Date(System.currentTimeMillis()));
+        putpost.setContent(content);
+        putpost.setVisible(1);
+        putpost.setWritter(userforpost.getId());
+        putpost.setName(name);
+        putpost.setTheme(1);
+        System.out.println("####");
+        System.out.println(putpost);
+        System.out.println("####");
+        boolean save = postService.save(putpost);
+        model.addAttribute("msg",save?"发布成功":"发布失败");
+        return "table/postput";
+    }
+    @GetMapping("/write")
+    public String writepost(){
+        return "table/postput";
     }
     @GetMapping("/page")
     public String postPost(@RequestParam(value = "pagenum",defaultValue = "1") String pagenum,

@@ -23,7 +23,7 @@ create table post_table(
        writter int,
        visible int default 1, #1可见 0不可见
        content varchar(400),
-       theme int,
+       theme int default 1,
        time date,
        foreign key(theme) references theme_table(id),
        foreign key(writter) references user_table(id)

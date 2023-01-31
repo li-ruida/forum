@@ -11,6 +11,8 @@
     <base href="http://localhost:8888/" />
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style-responsive.css" rel="stylesheet">
+    <!--gritter css-->
+    <link rel="stylesheet" type="text/css" href="js/bootstrap-wysihtml5/bootstrap-wysihtml5.css" />
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -90,7 +92,7 @@
                     </ul>
                 </li>
 
-                <li><a href="fontawesome.html"><i class="fa fa-bullhorn"></i> <span>Fontawesome</span></a></li>
+                <li><a href="/write"><i class="fa fa-bullhorn"></i> <span>Write</span></a></li>
 
                 <li class="menu-list"><a href=""><i class="fa fa-envelope"></i> <span>Mail</span></a>
                     <ul class="sub-menu-list">
@@ -595,9 +597,21 @@
 <script src="js/modernizr.min.js"></script>
 <script src="js/jquery.nicescroll.js"></script>
 
+<!--gritter script-->
+<script type="text/javascript" src="js/gritter/js/jquery.gritter.js"></script>
+<script src="js/gritter/js/gritter-init.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/ckeditor/ckeditor.js"></script>
+
+<script type="text/javascript" src="js/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script>
+<script type="text/javascript" src="js/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
 
 <!--common scripts for all pages-->
 <script src="js/scripts.js"></script>
 
+<script>
+    jQuery(document).ready(function () {
+        $('.wysihtml5').wysihtml5();
+    });
+</script>
 </body>
 </html>
