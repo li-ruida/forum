@@ -351,13 +351,13 @@
                     <li>
                         <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                             <img src="images/photos/user-avatar.png" alt="" />
-                            John Doe
+                            <span th:if="${session.loginUser}!=null" th:text="${session.loginUser.name}">Name</span>
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
-                            <li><a href="#"><i class="fa fa-user"></i>  Profile</a></li>
+                            <li><a th:href="@{/profile}"><i class="fa fa-user"></i>  Profile</a></li>
                             <li><a href="#"><i class="fa fa-cog"></i>  Settings</a></li>
-                            <li><a href="#"><i class="fa fa-sign-out"></i> Log Out</a></li>
+                            <li><a th:href="@{/logout}"><i class="fa fa-sign-out"></i> Log Out</a></li>
                         </ul>
                     </li>
 
@@ -471,9 +471,9 @@
                                     <h1 class="text-center cmnt-head" th:text="${postdetail.getName()}">Neque porro quisquam est qui dolo rem ipsum quio</h1>
                                     <p class="text-center auth-row">
                                         <span  th:text="${writter.getName()}" class="panel-heading">Anthony Jones</span> &nbsp;
-                                        <span class=" panel-heading" th:text="${postdetail.getTime()}"> </span >
-                                        <span th:text="${theme.getName()}" class=" panel-heading">Anthony Jones</span>&nbsp;
-                                        <span class=" panel-heading">5 Comments</span>
+
+
+                                        <span class="pull-left" th:text="'Theme: '+${#dates.format(postdetail.getTime(), 'dd/MMM/yyyy')}">About 10 Min ago</span>
                                     </p>
                                     <p th:text="${postdetail.getContent()}">
 
@@ -487,7 +487,7 @@
 
 
                                     <div class="blog-tags">
-                                        TAGS <a href="#">photoshop</a> <a href="#">illustrator</a> <a href="#">adobe</a> <a href="#">theme</a>
+                                        <span th:text="${theme.getName()}">Theme</span>
                                         <div class="pull-right tag-social">
                                             <a href="#" class="btn btn-share pull-right">Share</a>
 
@@ -514,131 +514,52 @@
                             </div>
                             <div class="panel">
                                 <div class="panel-body">
-                                    <h1 class="text-center cmnt-head">5 Comments</h1>
-                                    <div class="media blog-cmnt">
-                                        <a href="javascript:;" class="pull-left">
-                                            <img alt="" src="images/blog/blog-avatar-2.jpg" class="media-object">
-                                        </a>
-                                        <div class="media-body">
-                                            <h4 class="media-heading">
-                                                <a href="#">jones</a>
-                                            </h4>
-                                            <div class="bl-status">
-                                                <span class="pull-left">About 10 Min ago</span>
-                                                <a href="#" class="pull-right reply">Reply</a>
-                                            </div>
-                                            <p class="mp-less">
-                                                Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="media blog-cmnt">
-                                        <a href="javascript:;" class="pull-left">
-                                            <img alt="" src="images/blog/blog-avatar.jpg" class="media-object">
-                                        </a>
-                                        <div class="media-body">
-                                            <h4 class="media-heading">
-                                                <a href="#">jones</a>
-                                            </h4>
-                                            <div class="bl-status">
-                                                <span class="pull-left">About 10 Min ago</span>
-                                                <a href="#" class="pull-right reply">Reply</a>
-                                            </div>
-                                            <p class="mp-less">
-                                                Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit.
-                                            </p>
-                                            <div class="media blog-cmnt">
-                                                <a href="javascript:;" class="pull-left">
-                                                    <img alt="" src="images/blog/blog-avatar-2.jpg" class="media-object-child">
-                                                </a>
-                                                <div class="media-body">
-                                                    <h4 class="media-heading">
-                                                        <a href="#">jones</a>
-                                                    </h4>
-                                                    <div class="bl-status">
-                                                        <span class="pull-left">About 10 Min ago</span>
-                                                        <!--<a href="#" class="pull-right reply">Reply</a>-->
-                                                    </div>
-                                                    <p class="mp-less">
-                                                        Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit.
-                                                    </p>
-                                                    <div class="media blog-cmnt">
-                                                        <a href="javascript:;" class="pull-left">
-                                                            <img alt="" src="images/blog/blog-avatar.jpg" class="media-object-child">
-                                                        </a>
-                                                        <div class="media-body">
-                                                            <h4 class="media-heading">
-                                                                <a href="#">gomez</a>
-                                                            </h4>
-                                                            <div class="bl-status">
-                                                                <span class="pull-left">About 10 Min ago</span>
-                                                                <!--<a href="#" class="pull-right reply">Reply</a>-->
-                                                            </div>
-                                                            <p class="mp-less">
-                                                                Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit.
-                                                            </p>
-                                                            <div class="media blog-cmnt">
-                                                                <a href="javascript:;" class="pull-left">
-                                                                    <img alt="" src="images/blog/blog-avatar-2.jpg" class="media-object-child">
-                                                                </a>
-                                                                <div class="media-body">
-                                                                    <h4 class="media-heading">
-                                                                        <a href="#">gomez</a>
-                                                                    </h4>
-                                                                    <div class="bl-status">
-                                                                        <span class="pull-left">About 10 Min ago</span>
-                                                                        <!--<a href="#" class="pull-right reply">Reply</a>-->
-                                                                    </div>
-                                                                    <p class="mp-less">
-                                                                        Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit.
-                                                                    </p>
-                                                                    <div class="media blog-cmnt">
-                                                                        <a href="javascript:;" class="pull-left">
-                                                                            <img alt="" src="images/blog/blog-avatar.jpg" class="media-object-child">
-                                                                        </a>
-                                                                        <div class="media-body">
-                                                                            <h4 class="media-heading">
-                                                                                <a href="#">gomez</a>
-                                                                            </h4>
-                                                                            <div class="bl-status">
-                                                                                <span class="pull-left">About 10 Min ago</span>
-                                                                                <!--<a href="#" class="pull-right reply">Reply</a>-->
-                                                                            </div>
-                                                                            <p class="mp-less">
-                                                                                Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,
-                                                                            </p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+
+
+                                    <table>
+                                        <tr th:if="${#maps.isEmpty(commentsmap)}">
+                                            <td colspan="5">没有对应评论!</td>
+                                        </tr>
+                                        <h1 class="text-center cmnt-head" th:text="${commentsmap.size()+' Comments'}"
+                                            th:unless="${#maps.isEmpty(commentsmap)}">5 Comments</h1>
+                                        <tr th:unless="${#maps.isEmpty(commentsmap)}"
+                                            th:each="comment: ${commentsmap}">
+                                            <td class="w20" >
+                                                <div class="media blog-cmnt">
+                                                    <a href="javascript:;" class="pull-left">
+                                                        <img alt="" src="images/blog/blog-avatar-2.jpg" class="media-object">
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <h4 class="media-heading">
+                                                            <p th:text="${comment.getValue().getName()}" >jones</p>
+                                                        </h4>
+                                                        <div class="bl-status">
+                                                            <span class="pull-left" th:text="${#dates.format(comment.getKey().getTime(), 'dd/MMM/yyyy')}">About 10 Min ago</span>
+
+                                                            <a href="#" class="pull-right reply">Reply</a>
                                                         </div>
+                                                        <p class="mp-less" th:text="${comment.getKey().getContent()}">
+                                                            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit.
+                                                        </p>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                            </td>
+                                        </tr>
+
+                                        </table>
+
+
                                 </div>
                             </div>
                             <div class="panel">
                                 <div class="panel-body">
                                     <h1 class="text-center cmnt-head ">Leave a Comments</h1>
-                                    <p class="text-center fade-txt">If you want you can <a href="#">Cancel Reply</a></p>
-
-                                    <form role="form" class="form-horizontal leave-cmnt">
+                                    <form role="form" class="form-horizontal leave-cmnt" th:action="@{'/comment/'+${session.loginUser.getId()}}" method="post">
+                                        <input type="hidden" name="_method" value="put"/>
+                                        <input type="hidden" name="postid" th:value="${postdetail.getId()}"/>
                                         <div class="form-group">
                                             <div class="col-lg-12">
-                                                <input type="text" class="col-lg-12 form-control" placeholder="Name *">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="col-lg-12">
-                                                <input type="text" class="col-lg-12 form-control" placeholder="Email *">
-                                            </div>
-
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="col-lg-12">
-                                                <textarea class=" form-control" rows="8" placeholder="Message"></textarea>
+                                                <textarea class=" form-control" rows="8" placeholder="Message" name="content" ></textarea>
                                             </div>
                                         </div>
                                         <p>

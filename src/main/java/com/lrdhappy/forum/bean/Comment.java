@@ -2,6 +2,7 @@ package com.lrdhappy.forum.bean;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.*;
+import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
@@ -15,6 +16,7 @@ import java.util.Date;
 @ToString
 @EqualsAndHashCode
 @TableName("comment_table")
+@Component
 public class Comment {
     int id;
     Date time;

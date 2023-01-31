@@ -2,6 +2,7 @@ package com.lrdhappy.forum.bean;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.*;
+import org.springframework.stereotype.Component;
 
 /**
  * @author lrd
@@ -13,6 +14,7 @@ import lombok.*;
 @ToString
 @EqualsAndHashCode
 @TableName("user_table")
+@Component
 public class User {
     int id;
     String name;

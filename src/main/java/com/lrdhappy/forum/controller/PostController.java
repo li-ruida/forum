@@ -1,6 +1,7 @@
 package com.lrdhappy.forum.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.lrdhappy.forum.bean.Comment;
 import com.lrdhappy.forum.bean.Post;
 import com.lrdhappy.forum.bean.Theme;
 import com.lrdhappy.forum.bean.User;
@@ -15,6 +16,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author lrd
@@ -31,15 +35,12 @@ public class PostController {
     ThemeService themeService;
     @Autowired
     CommentService commentService;
+
+    @Autowired
+    User loginUser;
     @GetMapping("/")
     public String index(HttpSession session, Model model){
         Page<Post> postPage = postService.postSelectByVisible(1, 5);
-        System.out.println(postPage.getCountId());
-        System.out.println(postPage.getCurrent());//第几页
-        System.out.println(postPage.hasNext());
-        System.out.println(postPage.hasPrevious());
-        System.out.println(postPage.getTotal());//总数
-        System.out.println(postPage.getSize());//页长
         model.addAttribute("postpage",postPage);
         return "index";
     }
@@ -47,7 +48,7 @@ public class PostController {
     public String getPostDetail(@PathVariable("id") String id,
                                 HttpSession session,Model model
                                 ){
-        User loginUser = (User) session.getAttribute("loginUser");
+        loginUser = (User) session.getAttribute("loginUser");
         int power;
         if(loginUser!=null)
             power=loginUser.getPower();
@@ -56,11 +57,18 @@ public class PostController {
         Post post=postService.postSelectByIdAndVisible(Integer.parseInt(id),power);
         User writter = userService.getById(post.getWritter());
         Theme theme = themeService.getById(post.getTheme());
+        List<Comment> comments = commentService.selectCommentByPostId(post.getId());
+        Map<Comment,User> commentsmap=new HashMap<>();
+        for(Comment c:comments){
+            User user=userService.getById(c.getWritter());
+            commentsmap.put(c,user);
+        }
+        System.out.println(commentsmap.toString());
         //评论
         model.addAttribute("theme",theme);
         model.addAttribute("writter",writter);
         model.addAttribute("postdetail",post);
-
+        model.addAttribute("commentsmap",commentsmap);
         return "postdetail";
     }
     @GetMapping("/page")
