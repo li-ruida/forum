@@ -173,9 +173,9 @@
             <!--toggle button end-->
 
             <!--search start-->
-            <form class="searchform" action="index.html" method="post">
-                <input type="text" class="form-control" name="keyword" placeholder="Search here..." />
-            </form>
+<!--            <form class="searchform" action="index.html" method="post">-->
+<!--                <input type="text" class="form-control" name="keyword" placeholder="Search here..." />-->
+<!--            </form>-->
             <!--search end-->
 
             <!--notification menu start -->
@@ -379,7 +379,9 @@
                 <div class="col-md-4">
                     <div class="panel">
                         <div class="panel-body">
-                            <input type="text" placeholder="Search Blog" class="form-control blog-search">
+                            <form action="/search" method="post">
+                                <input type="text" placeholder="Search Post" class="form-control blog-search" name="searchword">
+                            </form>
                         </div>
                     </div>
                     <div class="panel">

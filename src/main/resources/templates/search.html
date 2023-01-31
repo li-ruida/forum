@@ -487,11 +487,11 @@
                     <div class="panel-body">
                         <div class="panel-group " id="accordion">
                         <table>
-                            <tr th:if="${#lists.isEmpty(postpage.getSize())}">
+                            <tr th:if="${#lists.isEmpty(postpage)}">
                                 <td colspan="5">没有对应帖子!</td>
                             </tr>
-                            <tr th:unless="${#lists.isEmpty(postpage.getSize())}"
-                                th:each="post: ${postpage.getRecords()}">
+                            <tr th:unless="${#lists.isEmpty(postpage)}"
+                                th:each="post: ${postpage}">
                                 <td class="w20">
                                 <div class="panel">
                                 <div class="panel-heading">
@@ -523,19 +523,6 @@
                                 </td>
                             </tr>
                         </table>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="text-center">
-                                <ul class="pagination blog-pagination">
-                                    <li>
-                                        <a th:href="@{/page(pagenum=(${postpage.hasPrevious()}?${postpage.getCurrent()-1}:${postpage.getCurrent()}))}">PREV</a>
-                                    </li>
-                                    <li>
-                                        <a th:href="@{/page(pagenum=(${postpage.hasNext()}?${postpage.getCurrent()+1}:${postpage.getCurrent()}))}">NEXT</a>
-                                    </li>
-                                </ul>
-
-                            </div>
                         </div>
 
                     </div>
