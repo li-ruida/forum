@@ -9,6 +9,8 @@ import com.lrdhappy.forum.service.impl.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author lrd
  * @date 2023-01-28 16:40
@@ -32,5 +34,10 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
         Post post = postMapper.selectById(id);
         int visible=post.getVisible()==1?1:(power==-2?1:0);
         return visible==1?post:null;
+    }
+
+    @Override
+    public List<Post> getAllPost() {
+        return postMapper.getAllPost();
     }
 }
