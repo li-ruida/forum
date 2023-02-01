@@ -1,4 +1,4 @@
-package com.lrdhappy.forum.service.impl.impl;
+package com.lrdhappy.forum.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.lrdhappy.forum.bean.Post;
 import com.lrdhappy.forum.config.RedisConfig;
 import com.lrdhappy.forum.mapper.PostMapper;
-import com.lrdhappy.forum.service.impl.PostService;
+import com.lrdhappy.forum.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;

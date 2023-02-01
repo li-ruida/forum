@@ -1,10 +1,10 @@
-package com.lrdhappy.forum.service.impl.impl;
+package com.lrdhappy.forum.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.lrdhappy.forum.bean.Comment;
 import com.lrdhappy.forum.config.RedisConfig;
 import com.lrdhappy.forum.mapper.CommentMapper;
-import com.lrdhappy.forum.service.impl.CommentService;
+import com.lrdhappy.forum.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;

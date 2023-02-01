@@ -1,9 +1,9 @@
-package com.lrdhappy.forum.service.impl.impl;
+package com.lrdhappy.forum.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.lrdhappy.forum.bean.Theme;
 import com.lrdhappy.forum.mapper.ThemeMapper;
-import com.lrdhappy.forum.service.impl.ThemeService;
+import com.lrdhappy.forum.service.ThemeService;
 import org.springframework.stereotype.Service;
 
 /**

@@ -1,4 +1,4 @@
-package com.lrdhappy.forum.service.impl;
+package com.lrdhappy.forum.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.lrdhappy.forum.bean.Theme;

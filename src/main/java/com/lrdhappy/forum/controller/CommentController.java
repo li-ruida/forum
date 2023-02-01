@@ -3,10 +3,11 @@ package com.lrdhappy.forum.controller;
 import com.lrdhappy.forum.bean.Comment;
 import com.lrdhappy.forum.bean.User;
 import com.lrdhappy.forum.config.RedisConfig;
-import com.lrdhappy.forum.service.impl.CommentService;
+import com.lrdhappy.forum.service.CommentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Caching;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -28,7 +29,7 @@ public class CommentController {
     User user;
     @Autowired
     Comment comment;
-    @CacheEvict(value = RedisConfig.REDIS_KEY_DATABASE, key = "'forum:comment:getbypostid'+#postid")
+    @Caching(evict={@CacheEvict(value = RedisConfig.REDIS_KEY_DATABASE, key = "'forum:comment:getbypostid'+#postid")})
     @PutMapping("/comment/{id}")
     public String putComment(@PathVariable("id") String id ,
                              @RequestParam("postid") String postid,

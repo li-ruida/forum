@@ -2,16 +2,11 @@ package com.lrdhappy.forum;
 
 import com.lrdhappy.forum.bean.Post;
 import com.lrdhappy.forum.dao.PostDao;
-import com.lrdhappy.forum.service.impl.PostService;
-import org.elasticsearch.index.query.QueryBuilders;
-import org.elasticsearch.index.query.TermQueryBuilder;
+import com.lrdhappy.forum.service.PostService;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
-import org.springframework.data.elasticsearch.core.mapping.IndexCoordinates;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Date;
 import java.util.List;

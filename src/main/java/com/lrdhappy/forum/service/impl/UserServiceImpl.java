@@ -1,9 +1,9 @@
-package com.lrdhappy.forum.service.impl.impl;
+package com.lrdhappy.forum.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.lrdhappy.forum.bean.User;
 import com.lrdhappy.forum.mapper.UserMapper;
-import com.lrdhappy.forum.service.impl.UserService;
+import com.lrdhappy.forum.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

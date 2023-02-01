@@ -1,7 +1,7 @@
 package com.lrdhappy.forum.controller;
 
 import com.lrdhappy.forum.bean.User;
-import com.lrdhappy.forum.service.impl.UserService;
+import com.lrdhappy.forum.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
