@@ -1,5 +1,7 @@
 package com.lrdhappy.forum.bean;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.*;
 import org.springframework.data.annotation.Id;
@@ -22,9 +24,10 @@ import java.util.Date;
 @EqualsAndHashCode
 @Component
 @TableName("post_table")
-@Document(indexName = "post",shards = 3, replicas = 1)//一分片,一副本
+@Document(indexName = "post",shards = 1, replicas = 1)//一分片,一副本
 public class Post {
     @Id
+    @TableId(value = "id",type = IdType.AUTO)//设置自增主键后,保存操作之后,对象自动获得主键ID
     int id;
     @Field(type = FieldType.Text, analyzer = "ik_max_word")
     String name;

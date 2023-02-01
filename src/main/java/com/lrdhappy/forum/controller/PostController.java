@@ -5,6 +5,7 @@ import com.lrdhappy.forum.bean.Comment;
 import com.lrdhappy.forum.bean.Post;
 import com.lrdhappy.forum.bean.Theme;
 import com.lrdhappy.forum.bean.User;
+import com.lrdhappy.forum.dao.PostDao;
 import com.lrdhappy.forum.service.impl.CommentService;
 import com.lrdhappy.forum.service.impl.PostService;
 import com.lrdhappy.forum.service.impl.ThemeService;
@@ -41,9 +42,9 @@ public class PostController {
     User loginUser;
 
     @Autowired
-    Post putpost;
-    @Autowired
     User userforpost;
+    @Autowired
+    PostDao postDao;
     @GetMapping("/")
     public String index(HttpSession session, Model model){
         Page<Post> postPage = postService.postSelectByVisible(1, 5);
@@ -83,6 +84,7 @@ public class PostController {
                           HttpSession session,Model model
                           ){
         userforpost= (User) session.getAttribute("loginUser");
+        Post putpost=new Post();
         putpost.setTime(new Date(System.currentTimeMillis()));
         putpost.setContent(content);
         putpost.setVisible(1);
@@ -93,6 +95,9 @@ public class PostController {
         System.out.println(putpost);
         System.out.println("####");
         boolean save = postService.save(putpost);
+        System.out.println(putpost.getId());
+        Post save1 = postDao.save(putpost);
+        System.out.println(save1);
         model.addAttribute("msg",save?"发布成功":"发布失败");
         return "table/postput";
     }

@@ -13,6 +13,7 @@ import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
 import org.springframework.data.elasticsearch.core.mapping.IndexCoordinates;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -43,8 +44,20 @@ public class ElasticsearchConnectTest {
         postDao.saveAll(allPost);
     }
     @Test
+    public void savetest(){
+        Post posttest=new Post();
+        posttest.setName("中医药方");
+        posttest.setTheme(1);
+        posttest.setWritter(1);
+        posttest.setContent("中医 中药");
+        posttest.setVisible(1);
+        posttest.setTime(new Date(System.currentTimeMillis()));
+        Post save = postDao.save(posttest);
+        System.out.println(save);
+    }
+    @Test
     public void searchTest(){
-        Iterable<Post> posts = postDao.findByContentOrName("大学","有意思");
+        Iterable<Post> posts = postDao.findByContentOrName("项目","项目");
         System.out.println(1);
         for(Post tmp:posts){
             System.out.println(tmp);
