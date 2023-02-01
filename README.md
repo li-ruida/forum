@@ -4,7 +4,6 @@
 + Redis缓存
 + 文件上传下载
 + ajax
-+ Markdown支持
 + ...
 ## 技术栈
 + Spring Boot
@@ -15,6 +14,7 @@
 + Redis
 + ElasticSearch 
 + Spring Data
++ Spring Cache
 > 后续会加的
 > + JWT
 > + RabbitMQ
