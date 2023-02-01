@@ -5,6 +5,7 @@ import com.lrdhappy.forum.bean.Comment;
 import com.lrdhappy.forum.bean.Post;
 import com.lrdhappy.forum.bean.Theme;
 import com.lrdhappy.forum.bean.User;
+import com.lrdhappy.forum.config.RedisConfig;
 import com.lrdhappy.forum.dao.PostDao;
 import com.lrdhappy.forum.service.impl.CommentService;
 import com.lrdhappy.forum.service.impl.PostService;
@@ -12,6 +13,9 @@ import com.lrdhappy.forum.service.impl.ThemeService;
 import com.lrdhappy.forum.service.impl.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.Caching;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -78,6 +82,8 @@ public class PostController {
         model.addAttribute("commentsmap",commentsmap);
         return "postdetail";
     }
+    @Caching(evict={@CacheEvict(value = RedisConfig.REDIS_KEY_DATABASE, key = "'forum:post:byvisible'+#pageNum"),
+            @CacheEvict(value = RedisConfig.REDIS_KEY_DATABASE, key = "'forum:post:getallpost'")})
     @PutMapping("/post")
     public String putPost(@RequestParam("postname") String name,
                           @RequestParam("postcontent") String content,
